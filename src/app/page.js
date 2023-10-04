@@ -1,42 +1,15 @@
-import ProductCard from "@/components/atoms/ProductCard";
 import Slideshow from "@/components/atoms/SlideShow";
+import NewArrivals from "@/components/molecules/NewArrivals";
 import landinPageData from "@/utils/mock-data/landing-page";
+import { carouselData } from "@/utils/mock-data/carousel-data";
+import WomenCategories from "@/components/molecules/PopularCarousel";
 
 export default function Home() {
   return (
     <main>
       <Slideshow data={landinPageData} />
-      <div className="flex flex-wrap">
-        <div className="w-[25%] h-[560px] p-4">
-          <ProductCard />
-        </div>
-
-        <div className="w-[25%] h-[560px] p-4">
-          <ProductCard />
-        </div>
-
-        <div className="w-[25%] h-[560px] p-4">
-          <ProductCard />
-        </div>
-
-        <div className="w-[25%] h-[560px] p-4">
-          <ProductCard />
-        </div>
-
-        <div className="w-[25%] h-[560px] p-4">
-          <ProductCard />
-        </div>
-
-        <div className="w-[25%] h-[560px] p-4">
-          <ProductCard />
-        </div>
-
-        <div className="w-[25%] h-[560px] p-4">
-          <ProductCard />
-        </div>
-
-
-      </div>
+      <WomenCategories data={carouselData} title={'TITLE'}/>
+      <NewArrivals/>      
     </main>
   );
 }

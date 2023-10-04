@@ -7,9 +7,9 @@ const NavbarItem = ({ children, downCarrot = true }) => {
       href="#"
       className="block w-fit text-sm font-medium after:content-[''] after:block after:bg-black after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 after:mt-1"
     >
-      <div className="w-fit flex justify-center items-center gap-x-2">
+      <div className="w-fit flex justify-center items-center gap-x-2 text-[12px] font-semibold">
         {children}
-        {downCarrot && <Carrot/>}
+        {downCarrot && <Carrot className='text-[8px]'/>}
       </div>
     </a>
   );
