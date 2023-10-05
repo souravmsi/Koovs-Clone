@@ -14,7 +14,7 @@ const content = [
 const Navbar = () => {
   return (
     <nav>
-      <ul className="flex gap-x-6 w-fit">
+      <ul className="flex gap-x-6 w-fit hidden tablet:flex">
         {content.map((item, index) => (
           <li key={index+1}>
             <NavbarItem>{item}</NavbarItem>

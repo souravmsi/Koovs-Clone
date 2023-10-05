@@ -39,36 +39,36 @@ const newArrivalData = [
     id: "0036",
     images: [
       "https://www.koovs.com/cdn/shop/products/KOOVS_20OCT22-1549.jpg?v=1667983172&width=713",
-      "https://www.koovs.com/cdn/shop/files/KOOVS_20OCT22-1557.jpg?v=1683702008&width=713",
+      "https://www.koovs.com/cdn/shop/files/KOOVS_20OCT22-1557.jpg?v=1683702008&width=713"
     ],
     brand: "Essentails by koovs",
     title: "Brian T-shirt",
     price: 790,
-    colors: ["#836953", "#e0e0e0", "#ebe6db", "#000080", "#000000"],
+    colors: ["#836953", "#e0e0e0", "#ebe6db", "#000080", "#000000"]
   },
 
   {
     id: "0037",
     images: [
       "https://www.koovs.com/cdn/shop/products/KOOVS_20OCT22-0444.jpg?v=1667983785&width=713",
-      "https://www.koovs.com/cdn/shop/files/KOOVS_20OCT22-0455.jpg?v=1683706126&width=713",
+      "https://www.koovs.com/cdn/shop/files/KOOVS_20OCT22-0455.jpg?v=1683706126&width=713"
     ],
     brand: "Essentails by koovs",
     title: "Evan T-shirt",
     price: 990,
-    colors: ["#000080", "#c1e1c1", "#ebe6db"],
+    colors: ["#000080", "#c1e1c1", "#ebe6db"]
   },
 
   {
     id: "0034",
     images: [
       "https://www.koovs.com/cdn/shop/products/templateforproducts-04_efe78a70-757e-492f-8fe2-964d65d68aeb.jpg?v=1682587354&width=713",
-      "https://www.koovs.com/cdn/shop/files/templateforproduzxzzxcts-01.jpg?v=1682587354&width=713",
+      "https://www.koovs.com/cdn/shop/files/templateforproduzxzzxcts-01.jpg?v=1682587354&width=713"
     ],
     brand: "Essentails by koovs",
     title: " Data T-shirt",
     price: 790,
-    colors: ["#b490b0", "#c1e1c1", "#ffb347"],
+    colors: ["#b490b0", "#c1e1c1", "#ffb347"]
   },
 ];
 

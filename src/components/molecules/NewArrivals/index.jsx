@@ -1,15 +1,14 @@
 import React from "react";
-import newArrivalData from "@/utils/mock-data/new-arrival-data";
 import ProductGrid from "@/components/atoms/ProductGrid";
 import ProductCard from "@/components/atoms/ProductCard";
 
-const NewArrivals = () => {
+const NewArrivals = ({data}) => {
   return (
     <div className="my-24 flex flex-col">
         <h2 className="text-center text-5xl mb-16">NEW ARRIVALS</h2>
       <ProductGrid>
-        {newArrivalData.map(({ id, images, brand, title, price, colors }) => (
-          <div key={id} className="w-[25%] h-[560px] p-4">
+        {data.map(({ _id, images, brand, title, price, colors }) => (
+          <div key={_id} className="w-full md:w-[calc(100%/2)] lg:w-[calc(100%/3)] xl:w-[25%] h-[560px] p-4">
             <ProductCard
               src1={images[0]}
               src2={images[1]}
