@@ -3,7 +3,6 @@ import CircularButton from "../CircularButton";
 import View from "@/icons/view.svg";
 import Wishlist from "@/icons/wishlist.svg";
 import Swatch from "../Swatch";
-import BackgroundDiv from "./BackgroudDiv";
 
 const ProductCard = ({
   src1 = "https://www.koovs.com/cdn/shop/products/KOOVS_20OCT22-1549.jpg?v=1667983172&width=713",
@@ -16,8 +15,9 @@ const ProductCard = ({
   return (
     <div className="w-full h-full">
       <div className="group relative w-full h-[80%] overflow-hidden">
-        <BackgroundDiv
-          className="w-full h-full transition-all duration-700 group-hover:scale-[1.2]"
+        <div
+          style={{'--image-url1': `url(${src1})`, '--image-url2': `url(${src2})`}} 
+          className="bg-[image:var(--image-url1)] bg-cover w-full h-full transition-all duration-700 group-hover:bg-[image:var(--image-url2)] group-hover:scale-[1.2]"
           src1={src1}
           src2={src2}
         />
@@ -31,7 +31,7 @@ const ProductCard = ({
             </CircularButton>
           </div>
 
-          <button className="absolute bottom-4 font-medium text-sm bg-white left-0 right-0 mx-4 py-2 rounded-md translate-y-16 group-hover:translate-y-0 duration-500 transition-all hover:text-white hover:bg-black">
+          <button className="absolute bottom-4 font-medium text-sm bg-white left-0 right-0 mx-8 py-3 rounded-md translate-y-16 group-hover:translate-y-0 duration-500 transition-all hover:text-white hover:bg-black">
             Select options
           </button>
         
