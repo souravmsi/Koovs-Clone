@@ -2,8 +2,13 @@ import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import ReduxProvider from "@/redux/ReduxProvider";
+import { Toaster } from 'react-hot-toast';
 
-const poppins = Poppins({ subsets: ["latin"], weight:['100', '200', '300', '400', '500', '600', '700', '800', '900'] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata = {
   title: "Koovs",
@@ -13,10 +18,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} min-h-screen max-w-screen-2xl mx-auto`}>
-        <Header/>
-        {children}
-        <Footer/>
+      <body
+        className={`${poppins.className} min-h-screen max-w-screen-2xl mx-auto`}
+      >
+        <ReduxProvider>
+          <Toaster />
+          <Header />
+          {children}
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );
