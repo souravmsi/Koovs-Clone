@@ -1,13 +1,11 @@
-import React from 'react'
-import Input from '@/components/atoms/Input';
-import Link from 'next/link';
+import React from "react";
+import Input from "@/components/atoms/Input";
+import Link from "next/link";
 
 const LoginPage = () => {
   return (
     <div className="py-20">
-      <h1 className="self-start text-3xl font-medium w-fit mx-auto">
-        Log In
-      </h1>
+      <h1 className="self-start text-3xl font-medium w-fit mx-auto">Log In</h1>
       <div className="w-fit mx-auto flex items-center gap-x-2 mt-8 mb-20">
         <Link href={"/"} className="text-sm hover:text-gray-400">
           Home
@@ -15,7 +13,7 @@ const LoginPage = () => {
         <p>{">"}</p>
         <p className="text-sm">Account</p>
       </div>
-      <form>
+      <form className="px-4">
         <div className="flex flex-col gap-y-4 items-center mx-auto w-[100%] max-w-[28rem]">
           <h2 className="self-start text-xl font-medium">Log In</h2>
           <Input type="email" placeHolder="Email" />
@@ -40,7 +38,7 @@ const LoginPage = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default LoginPage;

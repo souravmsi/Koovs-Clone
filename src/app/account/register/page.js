@@ -15,7 +15,7 @@ const RegisterPage = () => {
         <p>{">"}</p>
         <p className="text-sm">Create Account</p>
       </div>
-      <form>
+      <form className="px-4">
         <div className="flex flex-col gap-y-4 items-center mx-auto w-[100%] max-w-[28rem]">
           <h2 className="self-start text-xl font-medium">Register</h2>
           <Input type="text" placeHolder="First Name" />
