@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-[#f5f5f5] divide-y-2 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
+    <div className="sticky top-full bg-[#f5f5f5] divide-y-2 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
       <div className="px-12 divide-x-2 hidden xl:flex">
         <div className="py-12 w-[25%] px-8">
           <h4 className="mb-4 text-sm font-medium">About</h4>
