@@ -10,7 +10,7 @@ const HeaderUtility = () => {
         <button type="button">
             <Search/>
         </button>
-      <a href="#">
+      <a href="/account">
         <Profile />
       </a>
       <a href="#">
