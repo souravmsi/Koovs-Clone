@@ -1,4 +1,5 @@
 import Header from "@/components/organisms/Header";
+import Footer from "@/components/organisms/Footer";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className} `}>
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
