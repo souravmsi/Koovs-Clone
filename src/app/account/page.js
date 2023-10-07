@@ -14,7 +14,7 @@ const LoginPage = () => {
     if(token){
       dispatch(verifyUser(token))
     }
-  },[]);
+  },[dispatch]);
   const onLogin = (email, password) => {
     dispatch(login({email,password}));
   }

@@ -1,12 +1,24 @@
+'use client'
 import React from "react";
 import CircularButton from "../CircularButton";
 import View from "@/icons/view.svg";
 import Wishlist from "@/icons/wishlist.svg";
+import toast from "react-hot-toast";
 import Swatch from "../Swatch";
+import { addToCart } from "@/redux/slices/cart-slice";
+import { useDispatch } from "react-redux";
 
-const ProductCard = ({ src1, src2, brand, title, colors, price }) => {
+const ProductCard = ({ src1, src2, brand, title, colors, price, _id }) => {
+
+  const dispatch = useDispatch();
+
+  const addToCartHandler = () => {
+    toast.success('Added!');
+    dispatch(addToCart({_id, src1, brand, title, price}));
+  }
+
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full relative">
       <div className="group relative w-full h-[80%] overflow-hidden">
         <div
           style={{
@@ -36,6 +48,7 @@ const ProductCard = ({ src1, src2, brand, title, colors, price }) => {
       <h4 className="text-sm text-black font-medium leading-6">{title}</h4>
       <h4 className="text-sm text-black leading-6">{`Rs. ${price}.00`}</h4>
       <Swatch colors={colors} />
+      <CircularButton onClick = {addToCartHandler} className={'bg-black absolute opacity-90 hover:opacity-100 text-white bottom-4 right-4 font-semibold rounded-lg py-2 px-4 hover:scale-125 transition-all duration-500'}>+</CircularButton>
     </div>
   );
 };
