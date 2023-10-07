@@ -5,6 +5,7 @@ import Arrow from "@/icons/arrow.svg";
 import Mail from "@/icons/mail.svg";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -95,7 +96,7 @@ const Footer = () => {
         </div>
 
         <div className="shrink-0 grow-0 basis-[calc(100%/3)] flex justify-end">
-          <img src="/footer.avif" alt="footer image" />
+          <Image src={'/footer.avif'} alt="footer image" width={250} height={100}/>
         </div>
       </div>
     </div>

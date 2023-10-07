@@ -16,6 +16,7 @@ const NewArrivals = ({data}) => {
               title={title}
               price={price}
               colors={colors}
+              _id = {_id}
             />
           </div>
         ))}
