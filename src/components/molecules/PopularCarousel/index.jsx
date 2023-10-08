@@ -14,7 +14,7 @@ const PopularCarousel = ({data, title}) => {
           loop: true,
         }}
       >
-        {data.map(({ _id, src }) => (
+        {data.map(({ _id, src, title }) => (
           <div
             key={_id}
             className="group grow-0 shrink-0 basis-[calc(100%)] p-2 h-[535px] relative h-60 md:basis-[calc(100%/2)] lg:basis-[calc(100%/3)] xl:basis-[calc(100%/4)]"
@@ -24,7 +24,7 @@ const PopularCarousel = ({data, title}) => {
               style={{ background: `url(${src}) no-repeat`, backgroundSize:'cover' }}
             />
 
-            <h4 className="absolute bottom-6 left-8 font-semibold">Shorts</h4>
+            <h4 className="absolute bottom-6 left-8 font-semibold">{title}</h4>
             <CircularButton className="group-hover:bg-black group-hover:text-white absolute bottom-6 right-8 bg-white font-semibold rounded-full p-4 hover:scale-125 hover:bg-black hover:text-white transition-all duration-500">
               <Arrow />
             </CircularButton>
