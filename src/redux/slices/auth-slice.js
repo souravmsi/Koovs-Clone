@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
+import Cookies from 'js-cookie';
 
 export const login = createAsyncThunk(
   "users/login",
@@ -14,7 +15,6 @@ export const login = createAsyncThunk(
         body: JSON.stringify({ email, password }),
       }
     );
-
     if (!response.ok) {
       const { msg } = await response.json();
       throw new Error(msg);
@@ -58,6 +58,8 @@ const authSlice = createSlice({
   reducers: {
     logOut: (state) => {
       localStorage.removeItem('koovsAuth')
+      Cookies.remove('koovsAuth');
+      localStorage.removeItem("koovsData");
       state.name = "";
       state.isAuth = false;
       state.username = "";
@@ -68,24 +70,14 @@ const authSlice = createSlice({
       toast.success("Login Successfully...", { id: loadingToast });
       state.isAuth = true;
       state.username = action.payload.email;
-      localStorage.setItem("koovsAuth", action.payload.token);
+      Cookies.set('koovsAuth', action.payload.token, {expires: 7});
     }),
       builder.addCase(login.pending, () => {
         loadingToast = toast.loading("Loading...");
       }),
       builder.addCase(login.rejected, (state, action) => {
         toast.error(action.error.message, { id: loadingToast });
-      }),
-      builder.addCase(verifyUser.fulfilled, (state, action) => {
-        const { name, email } = action.payload;
-        state.isAuth = true;
-        state.username = email;
-        state.name = name;
-        toast.dismiss();
       });
-    builder.addCase(verifyUser.pending, (state, action) => {
-      loadingToast = toast.loading("Loading...");
-    });
   },
 });
 

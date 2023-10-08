@@ -1,16 +1,25 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Input from "@/components/atoms/Input";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "@/redux/slices/auth-slice";
+import { useRouter } from "next/navigation";
 
-const LoginComponent = ({ onLogin }) => {
+const LoginComponent = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const {isAuth} = useSelector(item => item.authReducer);
+  if(isAuth){
+    router.refresh();
+  }
   const loginHandler = (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    onLogin(email, password);
+    dispatch(login({email, password}))
   };
   return (
     <div className="py-20">
