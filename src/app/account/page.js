@@ -1,29 +1,31 @@
-'use client'
-import React, {useEffect} from "react";
-import { useDispatch } from "react-redux";
-import { login, verifyUser } from "@/redux/slices/auth-slice";
-import LoginComponent from "@/components/organisms/LoginComponent";
-import { useSelector } from "react-redux";
+import React from "react";
 import Profile from "@/components/organisms/Profile";
+import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
+import verifyUser from "@/utils/verifiyUser";
 
-const LoginPage = () => {
-  const dispatch = useDispatch();
-  const {isAuth, username, name} = useSelector((state)=>state.authReducer);
-  useEffect(()=>{
-    const token = localStorage.getItem('koovsAuth');
-    if(token){
-      dispatch(verifyUser(token))
+const AccountPage = async () => {
+  const cookieStore = cookies();
+  const data = cookieStore.get("koovsAuth");
+  let isAuth, fullName, username;
+  if (data) {
+    const token = data.value;
+    const { auth, name, email } = await verifyUser(token);
+    isAuth = auth;
+    fullName = name;
+    username = email;
+    if (!auth) {
+      redirect("/cart");
     }
-  },[dispatch]);
-  const onLogin = (email, password) => {
-    dispatch(login({email,password}));
+  } else {
+    redirect("/account/login");
   }
+
   return (
     <div>
-      {!isAuth && <LoginComponent onLogin={onLogin}/>}
-      {isAuth && <Profile email={username} name={name}/>}
+      <Profile email={username} name={fullName} />
     </div>
   );
 };
 
-export default LoginPage;
+export default AccountPage;
